@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title%}Home{% endblock%}
+
+{% block content%}
+
+    <h1>Este es el home nuevo (Plantilla)</h1>
+        
+        {% if nombre_persona == 'Pedro'%}
+            <p style="color:red;">Tu eres Pedro</p>
+        {% else%}
+            <p>Tu no eres pedro</p>
+        {% endif%}
+
+        <p>El nombre tuyo es: {{nombre_persona.upper}}</p>
+        <p>Y tu apellido es: {{apellido_persona}}</p>
+        <p>La fecha del d&iacute;a es: {{dia}}/{{mes}}/{{agno}}</p>
+        <p><b>Los temas a tratar son:</b></p>
+        {% if temas%}
+            <ol>
+            {% for cadaTema in temas%}
+                
+                <li>{{cadaTema}}</li>
+
+            {% endfor %}
+            </ol>
+        {% else %}
+            <p>No hay elementos en la lista</p>
+        {% endif %}
+
+{% endblock%}

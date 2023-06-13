@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+{% block title%} Datos {% endblock%}
+
+{% block content%}
+<ul>
+    {% for datos in fields%}
+        <li>{{datos.1}}</li>
+    {% endfor%}
+</ul>
+{% endblock%}

@@ -16,10 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from config.views import home, inicio
+from config.views import home, inicio, pasaedad, odoo
+
 
 urlpatterns = [
-    path('nada/', inicio),
+    path('inicio/', inicio),
     path('admin/', admin.site.urls),
     path('home/', home),
+    path('edad/<int:edad>/<int:agno>', pasaedad),#int: sirve para pasar el parametro a caracter entero
+    path('datos/', odoo)
 ]
